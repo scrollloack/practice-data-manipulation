@@ -13,15 +13,13 @@ input_data = {
 }
 
 users = input_data[:users]
-posts = input_data[:posts]
+posts = input_data[:posts].group_by { |post| post[:user_id] }
 
 user_posts = users.map do |user|
   {
     id: user[:id],
     name: user[:name],
-    posts: posts
-           .select { |post| post[:user_id] == user[:id] }
-           .map { |data| { id: data[:id], title: data[:title] } }
+    posts: (posts[user[:id]] || []).map { |data| { id: data[:id], title: data[:title] } }
   }
 end
 

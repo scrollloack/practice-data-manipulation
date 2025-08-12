@@ -1,7 +1,10 @@
 {
-  "name": "shiftcare-tech-exam",
+  "name": "practice-data-manipulation",
   "image": "mcr.microsoft.com/devcontainers/ruby:1-3.4-bullseye",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,7 +20,8 @@
         "2gua.rainbow-brackets",
         "oderwat.indent-rainbow",
         "shahilkumar.docxreader",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "formulahendry.code-runner"
       ]
     },
     "settings": {

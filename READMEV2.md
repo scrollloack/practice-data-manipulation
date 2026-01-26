@@ -10,6 +10,9 @@
     - [5. Build User-Post Relationships](#5-build-user-post-relationships)
     - [6. Filter Users with High Ratings](#6-filter-users-with-high-ratings)
     - [7. Extract Latest Feedback Comments](#7-extract-latest-feedback-comments)
+    - [8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.](#8-write-two-functions-one-that-logs-every-number-in-the-fibonacci-sequence-up-to-a-given-count-and-another-that-returns-only-the-nth-element-of-the-sequence)
+    - [9. Write a function that takes a string as input and returns a new string with the characters in reverse order.](#9-write-a-function-that-takes-a-string-as-input-and-returns-a-new-string-with-the-characters-in-reverse-order)
+    - [10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string.](#10-write-a-function-that-identifies-repeating-characters-in-a-given-string-you-should-implement-two-versions-one-that-returns-the-first-character-that-repeats-and-another-that-returns-an-array-of-all-duplicate-characters-found-in-the-string)
 
 ## 🧠 Goal
 
@@ -313,3 +316,26 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 ```
 **Hints**
 - Use map() for the users. Inside, use sort() on the feedback array by converting dates with new Date(item.date) and pick the first element.
+
+### 8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
+
+**Hints**
+- Use a for loop or while loop for the sequence logger.- Consider using recursion or a mathematical formula for finding the \(n^{th}\) element.
+- Remember that the sequence typically starts with 0 and 1.
+
+### 9. Write a function that takes a string as input and returns a new string with the characters in reverse order.
+
+**Hints**
+- Use a decrementing for loop to iterate through the string characters starting from the last index (string.length - 1) down to 0.
+- Alternatively:
+- Use String.prototype.split() to turn the string into an array.
+- Utilize Array.prototype.reverse() to flip the element order.
+- Use Array.prototype.join() to assemble the characters back into a string.
+
+### 10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
+
+**Hints**
+- Compare indexOf() and lastIndexOf() for a specific character; if they are different, that character is repeated.
+- Use a Frequency Counter (an empty object or Map) to track how many times each character appears as you iterate.
+- Utilize a Set to quickly check if a character has already been encountered during a single pass.
+- Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array. 

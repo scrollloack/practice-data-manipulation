@@ -13,6 +13,8 @@
     - [8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.](#8-write-two-functions-one-that-logs-every-number-in-the-fibonacci-sequence-up-to-a-given-count-and-another-that-returns-only-the-nth-element-of-the-sequence)
     - [9. Write a function that takes a string as input and returns a new string with the characters in reverse order.](#9-write-a-function-that-takes-a-string-as-input-and-returns-a-new-string-with-the-characters-in-reverse-order)
     - [10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string.](#10-write-a-function-that-identifies-repeating-characters-in-a-given-string-you-should-implement-two-versions-one-that-returns-the-first-character-that-repeats-and-another-that-returns-an-array-of-all-duplicate-characters-found-in-the-string)
+    - [11. Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"](#11-implement-a-function-stringchallengestr1-str2-that-evaluates-whether-str2-can-be-constructed-using-only-characters-found-in-str1-return-the-string-true-if-a-portion-of-str1-characters-can-be-rearranged-to-match-str2-otherwise-return-the-string-false)
+    - [12. Implement a function MathChallenge(num) that determines if a given number is prime.](#12-implement-a-function-mathchallengenum-that-determines-if-a-given-number-is-prime)
 
 ## 🧠 Goal
 
@@ -319,11 +321,56 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 
 ### 8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
 
+**Input:**
+- Integer, nth position of the fibonacci.
+**Expected Output:**
+- First fn(6):
+```JSON
+{
+  "data": [
+    0,
+    1,
+    1,
+    2,
+    3,
+    5,
+  ]
+}
+```
+- Second fn(6):
+```JSON
+{
+  "data": 5
+}
+```
+
 **Hints**
 - Use a for loop or while loop for the sequence logger.- Consider using recursion or a mathematical formula for finding the \(n^{th}\) element.
 - Remember that the sequence typically starts with 0 and 1.
 
 ### 9. Write a function that takes a string as input and returns a new string with the characters in reverse order.
+
+**Input:**
+- String
+**Expected Output:**
+- First fn('hello'):
+```JSON
+{
+  "data": "olleh"
+}
+```
+- Second fn('world'):
+```JSON
+{
+  "data": "dlrow"
+}
+```
+- Third fn('programming'):
+```JSON
+{
+  "data": "remmargorp"
+}
+```
 
 **Hints**
 - Use a decrementing for loop to iterate through the string characters starting from the last index (string.length - 1) down to 0.
@@ -334,8 +381,65 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 
 ### 10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
 
+**Input:**
+- String
+**Expected Output:**
+- First fn('swiss'):
+```JSON
+{
+  "data": "s"
+}
+```
+- Second fn('programmer'):
+```JSON
+
+{
+  "data": [
+    "r",
+    "g",
+    "m"
+  ]
+}
+```
+
 **Hints**
 - Compare indexOf() and lastIndexOf() for a specific character; if they are different, that character is repeated.
 - Use a Frequency Counter (an empty object or Map) to track how many times each character appears as you iterate.
 - Utilize a Set to quickly check if a character has already been encountered during a single pass.
-- Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array. 
+- Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array.
+
+### 11. Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"
+
+**Input:**
+- Two strings, str1 and str2.
+**Expected Output:**
+- fn("cdore", "coder")
+```JSON
+{ "data": "true" }
+```
+- fn("h3llko", "hello")
+```JSON
+{ "data": "false" }
+```
+
+**Note:** You do not need to worry about punctuation or symbols; only alphanumeric characters will be passed. 
+
+**Hints**
+- Sorting: One of the most readable ways to solve this is to sort both strings and see if one is a subset of the other. However, sorting is computationally expensive (O(n log n)).
+- Recommendation: Use a frequency map for the best balance. It provides (O(n)) time complexity (optimization) while remaining fairly clear for other developers to read. 
+
+### 12. Implement a function MathChallenge(num) that determines if a given number is prime. 
+
+**Input:**
+- An integer num between 1 and 2^16
+**Expected Output:**
+- Return the string "true" if the number is prime; otherwise, return the string "false"
+
+**Note:** A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. 
+
+**Hints**
+- For mathematical checks like this, a for loop is the standard approach because you can short-circuit (exit early) as soon as a divisor is found. 
+- Optimization Tip: You don’t need to check every number up to num. You only need to check up to the square root of num. If no divisor is found by that point, none will be found later.
+- Efficiency: Using Math.sqrt(num) significantly reduces the number of iterations, which is vital as the input reaches (65,536).
+- Remember 1: The number 1 is neither prime nor composite. Ensure your function handles this correctly by returning "false"
+- Even Numbers: Aside from the number 2, no even number can be prime. You can optimize your loop further by checking if the number is 2 and then skipping all other even numbers.

@@ -10,11 +10,11 @@
     - [5. Build User-Post Relationships](#5-build-user-post-relationships)
     - [6. Filter Users with High Ratings](#6-filter-users-with-high-ratings)
     - [7. Extract Latest Feedback Comments](#7-extract-latest-feedback-comments)
-    - [8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.](#8-write-two-functions-one-that-logs-every-number-in-the-fibonacci-sequence-up-to-a-given-count-and-another-that-returns-only-the-nth-element-of-the-sequence)
-    - [9. Write a function that takes a string as input and returns a new string with the characters in reverse order.](#9-write-a-function-that-takes-a-string-as-input-and-returns-a-new-string-with-the-characters-in-reverse-order)
-    - [10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string.](#10-write-a-function-that-identifies-repeating-characters-in-a-given-string-you-should-implement-two-versions-one-that-returns-the-first-character-that-repeats-and-another-that-returns-an-array-of-all-duplicate-characters-found-in-the-string)
-    - [11. Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"](#11-implement-a-function-stringchallengestr1-str2-that-evaluates-whether-str2-can-be-constructed-using-only-characters-found-in-str1-return-the-string-true-if-a-portion-of-str1-characters-can-be-rearranged-to-match-str2-otherwise-return-the-string-false)
-    - [12. Implement a function MathChallenge(num) that determines if a given number is prime.](#12-implement-a-function-mathchallengenum-that-determines-if-a-given-number-is-prime)
+    - [8. FibonacciChallenge](#8-fibonaccichallenge)
+    - [9. String Reverser](#9-string-reverser)
+    - [10. Repeated Character Challenge](#10-repeated-character-challenge)
+    - [11. String Challenge](#11-string-challenge)
+    - [12. Math Challenge](#12-math-challenge)
 
 ## 🧠 Goal
 
@@ -319,7 +319,9 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 **Hints**
 - Use map() for the users. Inside, use sort() on the feedback array by converting dates with new Date(item.date) and pick the first element.
 
-### 8. Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
+### 8. FibonacciChallenge
+Problem: 
+Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
 
 **Input:**
 - Integer, nth position of the fibonacci.
@@ -348,7 +350,9 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 - Use a for loop or while loop for the sequence logger.- Consider using recursion or a mathematical formula for finding the \(n^{th}\) element.
 - Remember that the sequence typically starts with 0 and 1.
 
-### 9. Write a function that takes a string as input and returns a new string with the characters in reverse order.
+### 9. String Reverser
+Problem:
+Write a function that takes a string as input and returns a new string with the characters in reverse order.
 
 **Input:**
 - String
@@ -379,7 +383,9 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 - Utilize Array.prototype.reverse() to flip the element order.
 - Use Array.prototype.join() to assemble the characters back into a string.
 
-### 10. Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
+### 10. Repeated Character Challenge
+Problem:
+Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
 
 **Input:**
 - String
@@ -408,7 +414,9 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 - Utilize a Set to quickly check if a character has already been encountered during a single pass.
 - Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array.
 
-### 11. Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"
+### 11. String Challenge
+Problem:
+Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"
 
 **Input:**
 - Two strings, str1 and str2.
@@ -428,7 +436,9 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 - Sorting: One of the most readable ways to solve this is to sort both strings and see if one is a subset of the other. However, sorting is computationally expensive (O(n log n)).
 - Recommendation: Use a frequency map for the best balance. It provides (O(n)) time complexity (optimization) while remaining fairly clear for other developers to read. 
 
-### 12. Implement a function MathChallenge(num) that determines if a given number is prime. 
+### 12. Math Challenge
+Problem:
+Implement a function MathChallenge(num) that determines if a given number is prime. 
 
 **Input:**
 - An integer num between 1 and 2^16

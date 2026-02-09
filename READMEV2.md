@@ -462,7 +462,9 @@ Implement a function that flattens arrays of arrays in a single array.
 **Input:**
 - An array
 ```JSON
-[1,[2,3,4],[5,6,[7,8]],9,10]
+[
+1,[2,3,4],[5,6,[7,8]],9,10
+]
 ```
 **Expected Output:**
 - Return all elements in a single array

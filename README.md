@@ -2,7 +2,7 @@
 - [Table of contents](#table-of-contents)
   - [🧠 Goal](#-goal)
   - [✅ Constraints/Assumptions](#-constraintsassumptions)
-  - [📚 Ruby Data Manipulation Quizzes](#-ruby-data-manipulation-quizzes)
+  - [📚 TypeScript/JavaScript Data Manipulation Quizzes](#-typescriptjavascript-data-manipulation-quizzes)
     - [1. Group Users by Email Domain](#1-group-users-by-email-domain)
     - [2. Flatten a Nested Tag Structure](#2-flatten-a-nested-tag-structure)
     - [3. Find Top N Products by Quantity](#3-find-top-n-products-by-quantity)
@@ -10,29 +10,36 @@
     - [5. Build User-Post Relationships](#5-build-user-post-relationships)
     - [6. Filter Users with High Ratings](#6-filter-users-with-high-ratings)
     - [7. Extract Latest Feedback Comments](#7-extract-latest-feedback-comments)
-  - [✅ Notes](#-notes)
-  - [💡 Reminder](#-reminder)
+    - [8. FibonacciChallenge](#8-fibonaccichallenge)
+    - [9. String Reverser](#9-string-reverser)
+    - [10. Repeated Character Challenge](#10-repeated-character-challenge)
+    - [11. String Challenge](#11-string-challenge)
+    - [12. Math Challenge](#12-math-challenge)
+    - [13. Array Parser](#13-array-parser)
+    - [14. Event Loop](#14-event-loop)
+    - [15. Rotate Array](#15-rotate-array)
+    - [16. Palindrome Challenge](#16-palindrome-challenge)
 
 ## 🧠 Goal
 
-These problems are designed to strengthen your understanding of how to traverse, query, and manipulate arrays and hashes using core Ruby and Enumerable methods like:
+These problems are designed to strengthen your understanding of how to traverse, query, and manipulate arrays and objects using modern JavaScript (ES6+) and TypeScript array methods like:
 
-- `map`, `each`, `select`, `filter`, `find`, `find_all`, `collect`, `group_by`, `reduce`, `flatten`, and more.
+- `map`, `forEach`, `filter`, `find`, `reduce`, `flat`, `flatMap`, `sort`, and `Object.entries`.
 
 ## ✅ Constraints/Assumptions
 
-- Input is a JSON file (e.g., input_data/data.json) passed via CLI (ruby bin/app.rb input_data/data.json --problem 1)
-- Output is printed to the terminal or returned as a data hash.
-- No third-party gems required; standard Ruby and JSON.
-- Each problem should be modular and can be easily adapted for a web/API context.
+- Input is a JSON file (e.g., `input_data/data.json`) passed via CLI (e.g., `node app.js input_data/data.json --problem 1`).
+- Output is printed to the terminal or returned as a data object.
+- Use standard Node.js modules or basic TypeScript; no heavy third-party libraries like Lodash required.
+- Each problem should be modular and easily adapted for a web/API context.
 
-## 📚 Ruby Data Manipulation Quizzes
+## 📚 TypeScript/JavaScript Data Manipulation Quizzes
 
 ### 1. Group Users by Email Domain
-Problem:
-Given a JSON array of users with an email field, group all users by their `email` domain (e.g., `gmail.com`, `yahoo.com`, etc.).
+**Problem:**
+Given a JSON array of users with an email field, group all users by their `email` domain (e.g., `gmail.com`, `yahoo.com`).
 
-Input JSON Format:
+**Input JSON Format:**
 ```JSON
 [
   { "name": "Alice", "email": "alice@gmail.com" },
@@ -41,7 +48,7 @@ Input JSON Format:
 ]
 ```
 
-Expected Output:
+**Expected Output:**
 ```JSON
 {
   "data": {
@@ -50,35 +57,33 @@ Expected Output:
   }
 }
 ```
-
-Hints:
-- Use `map`, `group_by`, `split`, and `each_with_object`.
+**Hints**
+- Use `reduce()`, `split('@')`, and bracket notation for dynamic keys.
 
 ### 2. Flatten a Nested Tag Structure
 Problem:
-Given a JSON object where each key represents a post and its associated `tags` array (possibly nested), flatten all tags into a unique list.
+Given a JSON object where each key represents a post and its associated `tags` array (possibly nested), flatten all tags into a unique list. Write two different functions with Object and a for loop to solve the problem.
 
-Input JSON Format:
+**Input JSON Format:**
 ```JSON
 {
-  "post_1": { "tags": ["ruby", ["cli", "json"], "parsing"] },
-  "post_2": { "tags": ["ruby", ["api", ["cli"]]] }
+  "post_1": { "tags": ["js", ["cli", "json"], "parsing"] },
+  "post_2": { "tags": ["js", ["api", ["cli"]]] }
 }
 ```
 
-Expected Output:
+**Expected Output:**
 ```JSON
-["ruby", "cli", "json", "parsing", "api"]
+["js", "cli", "json", "parsing", "api"]
 ```
-
-Hints:
-- Use `flatten`, `uniq`, `map`, and `values`.
+**Hints**
+- Use Object.values(), flat(Infinity), and [...new Set(array)].
 
 ### 3. Find Top N Products by Quantity
 Problem:
-Given a list of products with `name` and `quantity_sold`, find the top `N` products by quantity.
+Given a list of products with `name` and `quantity_sold`, find the top `N` products by quantity. Write two different functions with toSorted and for...loop to solve the problem.
 
-Input JSON Format:
+**Input JSON Format:**
 ```JSON
 [
   { "name": "Apples", "quantity_sold": 120 },
@@ -87,25 +92,21 @@ Input JSON Format:
 ]
 ```
 
-CLI Input:
-Pass an argument like --top 2 to get top 2 products.
-
-Expected Output:
+**Expected Output:**
 ```JSON
 [
   { "name": "Bananas", "quantity_sold": 200 },
   { "name": "Apples", "quantity_sold": 120 }
 ]
 ```
-
-Hints:
-- Use `sort_by`, `reverse`, `take`, `select`.
+**Hints**
+- Use sort((a, b) => b.quantity_sold - a.quantity_sold) and slice(0, n).
 
 ### 4. Detect Duplicate Customers by Name and Email
 Problem:
-Given a list of customers, find all duplicates based on **both** name and email (case insensitive).
+Given a list of customers, find all duplicates based on **both** name and email (case insensitive). Write two different functions with Object and for...loop to solve the problem.
 
-Input JSON Format:
+**Input JSON Format:**
 ```JSON
 [
   { "name": "john doe", "email": "john@example.com" },
@@ -114,22 +115,21 @@ Input JSON Format:
 ]
 ```
 
-Expected Output:
+**Expected Output:**
 ```JSON
 [
   { "name": "john doe", "email": "john@example.com" },
   { "name": "John Doe", "email": "JOHN@example.com" }
 ]
 ```
-
-Hints:
-- Use `group_by`, `map`, `downcase`, `select`.
+**Hints**
+- Use filter() while checking a helper object or Map to track counts of a normalized string (e.g., name.toLowerCase() + email.toLowerCase()).
 
 ### 5. Build User-Post Relationships
 Problem:
-Given two separate JSON arrays — one for `users`, and one for `posts`, where each post has a `user_id`, return each user with their posts attached.
+Given two separate JSON arrays — one for `users`, and one for `posts`, where each post has a `user_id`, return each user with their posts attached. Write two different functions with Object and for...loop to solve the problem.
 
-Input JSON Format:
+**Input JSON Format:**
 ```JSON
 {
   "users": [
@@ -139,30 +139,26 @@ Input JSON Format:
   "posts": [
     { "id": 101, "user_id": 1, "title": "Hello" },
     { "id": 102, "user_id": 1, "title": "World" },
-    { "id": 103, "user_id": 2, "title": "Ruby Rocks" }
+    { "id": 103, "user_id": 2, "title": "JS Rocks" }
   ]
 }
 ```
 
-Expected Output:
+**Expected Output:**
 ```JSON
 [
   { "id": 1, "name": "Alice", "posts": [ { "id": 101, "title": "Hello" }, { "id": 102, "title": "World" } ] },
-  { "id": 2, "name": "Bob", "posts": [ { "id": 103, "title": "Ruby Rocks" } ] }
+  { "id": 2, "name": "Bob", "posts": [ { "id": 103, "title": "JS Rocks" } ] }
 ]
 ```
-
-Hints:
-- Use `map`, `select`, `group_by`, `merge`.
+**Hints**
+- Use map() to iterate users and filter() to find matching posts, then spread the user object with the new posts key.
 
 ### 6. Filter Users with High Ratings
 Problem:
-Given an array of user records from a JSON file, extract only the users whose `result.rating` **is greater than 4**. This helps in identifying high performers based on a simple numerical threshold.
+Given an array of user records from a JSON file, extract only the users whose `result.rating` **is greater than 4**. This helps in identifying high performers based on a simple numerical threshold. Write two different functions with Chain and for...loop to solve the problem.
 
-Input JSON Format:
-
-<details open><summary>Open JSON</summary>
-
+**Input JSON Format:**
 ```JSON
 [
   {
@@ -281,9 +277,7 @@ Input JSON Format:
 ]
 ```
 
-</details>
-
-Expected Output:
+**Expected Output:**
 ```JSON
 [
   {
@@ -291,22 +285,26 @@ Expected Output:
     "full_name": "Jane Doe",
     "email": "jane.doe@example.com",
     "rating": 4.2
+  },
+  {
+    "id": 5,
+    "full_name": "Mike Johnson",
+    "email": "michael.johnson@example.com",
+    "rating": 4.6
   }
 ]
 ```
-
-Hints:
-- Use select, map, and nested hash access.
-- Ideal for practicing filtering and mapping over arrays of hashes.
+**Hints**
+- Use filter(), then map() to return a flattened object structure. Use optional chaining ?. if the result might be missing.
 
 ### 7. Extract Latest Feedback Comments
 Problem:
 From a list of users with feedback history, extract the latest comment per user based on date, and return a new array with each user’s email, full_name, and the most recent comment.
 
-Input JSON Format:
+**Input JSON Format:**
 Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 
-Expected Output:
+**Expected Output:**
 ```JSON
 [
   {
@@ -320,20 +318,191 @@ Expected Output:
     "latest_comment": "Keep up the good work!"
   }
 ]
+
+```
+**Hints**
+- Use map() for the users. Inside, use sort() on the feedback array by converting dates with new Date(item.date) and pick the first element.
+
+### 8. FibonacciChallenge
+Problem: 
+Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
+
+**Input:**
+- Integer, nth position of the fibonacci.
+**Expected Output:**
+- First fn(6):
+```JSON
+{
+  "data": [
+    0,
+    1,
+    1,
+    2,
+    3,
+    5,
+  ]
+}
+```
+- Second fn(6):
+```JSON
+{
+  "data": 5
+}
 ```
 
-Hints:
-- Use `map`, `max_by`, and `dig`.
-- You’ll need to parse dates using `Date.parse` or `Time.parse` to sort them.
+**Hints**
+- Use a for loop or while loop for the sequence logger.- Consider using recursion or a mathematical formula for finding the \(n^{th}\) element.
+- Remember that the sequence typically starts with 0 and 1.
 
-## ✅ Notes
-- All problems can be tackled using only Ruby’s Enumerable methods.
-- They're CLI-ready, and can be transitioned to a Sinatra or Rails API controller.
-- These problems simulate real-life data handling: flattening, filtering, grouping, joining datasets.
-- Each problem will challenge your understanding of arrays, hashes, and nested structures.
+### 9. String Reverser
+Problem:
+Write a function that takes a string as input and returns a new string with the characters in reverse order.
 
-## 💡 Reminder
-These problems are designed to hone your skills in:
-- Array and Hash traversal
-- Nested data structure manipulation
-- Using common Ruby methods like: select, map, each, find, group_by, max_by, flatten, etc.
+**Input:**
+- String
+**Expected Output:**
+- First fn('hello'):
+```JSON
+{
+  "data": "olleh"
+}
+```
+- Second fn('world'):
+```JSON
+{
+  "data": "dlrow"
+}
+```
+- Third fn('programming'):
+```JSON
+{
+  "data": "remmargorp"
+}
+```
+
+**Hints**
+- Use a decrementing for loop to iterate through the string characters starting from the last index (string.length - 1) down to 0.
+- Alternatively:
+- Use String.prototype.split() to turn the string into an array.
+- Utilize Array.prototype.reverse() to flip the element order.
+- Use Array.prototype.join() to assemble the characters back into a string.
+
+### 10. Repeated Character Challenge
+Problem:
+Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
+
+**Input:**
+- String
+**Expected Output:**
+- First fn('swiss'):
+```JSON
+{
+  "data": "s"
+}
+```
+- Second fn('programmer'):
+```JSON
+
+{
+  "data": [
+    "r",
+    "g",
+    "m"
+  ]
+}
+```
+
+**Hints**
+- Compare indexOf() and lastIndexOf() for a specific character; if they are different, that character is repeated.
+- Use a Frequency Counter (an empty object or Map) to track how many times each character appears as you iterate.
+- Utilize a Set to quickly check if a character has already been encountered during a single pass.
+- Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array.
+
+### 11. String Challenge
+Problem:
+Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"
+
+**Input:**
+- Two strings, str1 and str2.
+**Expected Output:**
+- fn("cdore", "coder")
+```JSON
+{ "data": "true" }
+```
+- fn("h3llko", "hello")
+```JSON
+{ "data": "false" }
+```
+
+**Note:** You do not need to worry about punctuation or symbols; only alphanumeric characters will be passed. 
+
+**Hints**
+- Sorting: One of the most readable ways to solve this is to sort both strings and see if one is a subset of the other. However, sorting is computationally expensive (O(n log n)).
+- Recommendation: Use a frequency map for the best balance. It provides (O(n)) time complexity (optimization) while remaining fairly clear for other developers to read. 
+
+### 12. Math Challenge
+Problem:
+Implement a function MathChallenge(num) that determines if a given number is prime. 
+
+**Input:**
+- An integer num between 1 and 2^16
+**Expected Output:**
+- Return the string "true" if the number is prime; otherwise, return the string "false"
+
+**Note:** A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. 
+
+**Hints**
+- For mathematical checks like this, a for loop is the standard approach because you can short-circuit (exit early) as soon as a divisor is found. 
+- Optimization Tip: You don’t need to check every number up to num. You only need to check up to the square root of num. If no divisor is found by that point, none will be found later.
+- Efficiency: Using Math.sqrt(num) significantly reduces the number of iterations, which is vital as the input reaches (65,536).
+- Remember 1: The number 1 is neither prime nor composite. Ensure your function handles this correctly by returning "false"
+- Even Numbers: Aside from the number 2, no even number can be prime. You can optimize your loop further by checking if the number is 2 and then skipping all other even numbers.
+
+### 13. Array Parser
+Problem:
+Implement a function that flattens arrays of arrays in a single array. 
+
+**Input:**
+- An array
+```JSON
+[
+1,[2,3,4],[5,6,[7,8]],9,10
+]
+```
+**Expected Output:**
+- Return all elements in a single array
+
+### 14. Event Loop
+Problem:
+Create a function that best represents the event loop.
+
+### 15. Rotate Array
+Problem:
+Create a function that rotates the given array with length *N* with *K* steps
+
+**Input:**
+```JSON
+[1,2,3,4,5,6,7]
+```
+**Output:**
+```JSON
+[5,6,7,1,2,3,4]
+```
+### 16. Palindrome Challenge
+Problem:
+Create a function that checks if the input string is a Palindrome.
+
+**Input:**
+```JavaScript
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("hello"));                         // false
+console.log(isPalindrome("racecar"));                      // true
+console.log(isPalindrome("🚀 racecar 🚀"));                // true (Unicode safe!)
+```
+**Output:**
+```JavaScript
+// true
+// false
+// true
+// true Unicode test
+```

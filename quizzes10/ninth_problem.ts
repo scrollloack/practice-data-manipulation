@@ -10,6 +10,16 @@ const strRevWithLoop = (str: string): string => {
   return newString;
 };
 
+const strRevWithLoopEfficient = (str: string): string => {
+  const result = new Array(str.length);
+
+  for (let i = 0, j = str.length - 1; j >= 0; i++, j--) {
+    result[i] = str[j];
+  }
+
+  return result.join("");
+};
+
 const strRevWithChained = (str: string): string => {
   return str.split("").reverse().join("");
 };
@@ -19,5 +29,8 @@ const strRevWithSpread = (str: string): string => {
 };
 
 console.log(JSON.stringify({ data: strRevWithLoop("hello") }, null, 2));
+console.log(
+  JSON.stringify({ data: strRevWithLoopEfficient("hello") }, null, 2),
+);
 console.log(JSON.stringify({ data: strRevWithChained("world") }, null, 2));
 console.log(JSON.stringify({ data: strRevWithSpread("programmer") }, null, 2));

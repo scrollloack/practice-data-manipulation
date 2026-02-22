@@ -506,5 +506,3 @@ console.log(isPalindrome("🚀 racecar 🚀"));                // true (Unicode 
 // true
 // true Unicode test
 ```
-
-

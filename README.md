@@ -19,6 +19,7 @@
     - [14. Event Loop](#14-event-loop)
     - [15. Rotate Array](#15-rotate-array)
     - [16. Palindrome Challenge](#16-palindrome-challenge)
+    - [17. Second Largest Number Challenge](#17-second-largest-number-challenge)
 
 ## 🧠 Goal
 
@@ -61,7 +62,7 @@ Given a JSON array of users with an email field, group all users by their `email
 - Use `reduce()`, `split('@')`, and bracket notation for dynamic keys.
 
 ### 2. Flatten a Nested Tag Structure
-Problem:
+**Problem:**
 Given a JSON object where each key represents a post and its associated `tags` array (possibly nested), flatten all tags into a unique list. Write two different functions with Object and a for loop to solve the problem.
 
 **Input JSON Format:**
@@ -80,7 +81,7 @@ Given a JSON object where each key represents a post and its associated `tags` a
 - Use Object.values(), flat(Infinity), and [...new Set(array)].
 
 ### 3. Find Top N Products by Quantity
-Problem:
+**Problem:**
 Given a list of products with `name` and `quantity_sold`, find the top `N` products by quantity. Write two different functions with toSorted and for...loop to solve the problem.
 
 **Input JSON Format:**
@@ -103,7 +104,7 @@ Given a list of products with `name` and `quantity_sold`, find the top `N` produ
 - Use sort((a, b) => b.quantity_sold - a.quantity_sold) and slice(0, n).
 
 ### 4. Detect Duplicate Customers by Name and Email
-Problem:
+**Problem:**
 Given a list of customers, find all duplicates based on **both** name and email (case insensitive). Write two different functions with Object and for...loop to solve the problem.
 
 **Input JSON Format:**
@@ -126,7 +127,7 @@ Given a list of customers, find all duplicates based on **both** name and email 
 - Use filter() while checking a helper object or Map to track counts of a normalized string (e.g., name.toLowerCase() + email.toLowerCase()).
 
 ### 5. Build User-Post Relationships
-Problem:
+**Problem:**
 Given two separate JSON arrays — one for `users`, and one for `posts`, where each post has a `user_id`, return each user with their posts attached. Write two different functions with Object and for...loop to solve the problem.
 
 **Input JSON Format:**
@@ -155,7 +156,7 @@ Given two separate JSON arrays — one for `users`, and one for `posts`, where e
 - Use map() to iterate users and filter() to find matching posts, then spread the user object with the new posts key.
 
 ### 6. Filter Users with High Ratings
-Problem:
+**Problem:**
 Given an array of user records from a JSON file, extract only the users whose `result.rating` **is greater than 4**. This helps in identifying high performers based on a simple numerical threshold. Write two different functions with Chain and for...loop to solve the problem.
 
 **Input JSON Format:**
@@ -298,7 +299,7 @@ Given an array of user records from a JSON file, extract only the users whose `r
 - Use filter(), then map() to return a flattened object structure. Use optional chaining ?. if the result might be missing.
 
 ### 7. Extract Latest Feedback Comments
-Problem:
+**Problem:**
 From a list of users with feedback history, extract the latest comment per user based on date, and return a new array with each user’s email, full_name, and the most recent comment.
 
 **Input JSON Format:**
@@ -324,7 +325,7 @@ Same as [Problem 6](#6-filter-users-with-high-ratings) above.
 - Use map() for the users. Inside, use sort() on the feedback array by converting dates with new Date(item.date) and pick the first element.
 
 ### 8. FibonacciChallenge
-Problem: 
+**Problem:** 
 Write two functions: one that logs every number in the Fibonacci sequence up to a given count, and another that returns only the nth element of the sequence.
 
 **Input:**
@@ -355,7 +356,7 @@ Write two functions: one that logs every number in the Fibonacci sequence up to 
 - Remember that the sequence typically starts with 0 and 1.
 
 ### 9. String Reverser
-Problem:
+**Problem:**
 Write a function that takes a string as input and returns a new string with the characters in reverse order.
 
 **Input:**
@@ -388,7 +389,7 @@ Write a function that takes a string as input and returns a new string with the 
 - Use Array.prototype.join() to assemble the characters back into a string.
 
 ### 10. Repeated Character Challenge
-Problem:
+**Problem:**
 Write a function that identifies repeating characters in a given string. You should implement two versions: one that returns the first character that repeats and another that returns an array of all duplicate characters found in the string. 
 
 **Input:**
@@ -419,7 +420,7 @@ Write a function that identifies repeating characters in a given string. You sho
 - Bonus: For a concise check, convert the string to an array and then to a Set, then compare the .size of the Set against the .length of the original array.
 
 ### 11. String Challenge
-Problem:
+**Problem:**
 Implement a function StringChallenge(str1, str2) that evaluates whether str2 can be constructed using only characters found in str1. Return the string "true" if a portion of str1 characters can be rearranged to match str2. Otherwise, return the string "false"
 
 **Input:**
@@ -441,7 +442,7 @@ Implement a function StringChallenge(str1, str2) that evaluates whether str2 can
 - Recommendation: Use a frequency map for the best balance. It provides (O(n)) time complexity (optimization) while remaining fairly clear for other developers to read. 
 
 ### 12. Math Challenge
-Problem:
+**Problem:**
 Implement a function MathChallenge(num) that determines if a given number is prime. 
 
 **Input:**
@@ -459,7 +460,7 @@ Implement a function MathChallenge(num) that determines if a given number is pri
 - Even Numbers: Aside from the number 2, no even number can be prime. You can optimize your loop further by checking if the number is 2 and then skipping all other even numbers.
 
 ### 13. Array Parser
-Problem:
+**Problem:**
 Implement a function that flattens arrays of arrays in a single array. 
 
 **Input:**
@@ -473,11 +474,11 @@ Implement a function that flattens arrays of arrays in a single array.
 - Return all elements in a single array
 
 ### 14. Event Loop
-Problem:
+**Problem:**
 Create a function that best represents the event loop.
 
 ### 15. Rotate Array
-Problem:
+**Problem:**
 Create a function that rotates the given array with length *N* with *K* steps
 
 **Input:**
@@ -489,7 +490,7 @@ Create a function that rotates the given array with length *N* with *K* steps
 [5,6,7,1,2,3,4]
 ```
 ### 16. Palindrome Challenge
-Problem:
+**Problem:**
 Create a function that checks if the input string is a Palindrome.
 
 **Input:**
@@ -505,4 +506,46 @@ console.log(isPalindrome("🚀 racecar 🚀"));                // true (Unicode 
 // false
 // true
 // true Unicode test
+```
+
+### 17. Second Largest Number Challenge
+**Problem:**
+Create a function that finds the 2nd largest number in a list WITHOUT using sort().
+
+**Input:**
+```JSON
+[3, 1, 4, 1, 5, 9, 2, 6]
+```
+
+**Output:**
+```JSON
+{ secondLargest: 9 }
+```
+
+```Typescript
+function findSecondLargest(nums: number[]): number | null {
+  // Handle edge case: less than two elements
+  if (nums.length < 2) return null;
+
+  // Initialize both to negative infinity
+  let largest: number = -Infinity;
+  let secondLargest: number = -Infinity;
+
+  for (const num of nums) {
+    if (num > largest) {
+      // Current num is new largest, previous largest becomes second
+      secondLargest = largest;
+      largest = num;
+    } else if (num > secondLargest && num < largest) {
+      // num is between largest and second largest
+      secondLargest = num;
+    }
+  }
+
+  // Return null if all numbers were the same
+  return secondLargest === -Infinity ? null : secondLargest;
+}
+
+const input = [3, 1, 4, 1, 5, 9, 2, 6];
+console.log(findSecondLargest(input)); // Output: 6
 ```

@@ -13,6 +13,4 @@ sorted_data = input_data.sort_by { |data| data[:quantity_sold] }.reverse!
 
 top_products = sorted_data.take(n)
 
-puts JSON.pretty_generate({ data: top_products })
-
-print 'hello'
+print JSON.pretty_generate({ data: top_products })

@@ -18,6 +18,7 @@
     - [13. Array Parser](#13-array-parser)
     - [14. Event Loop](#14-event-loop)
     - [15. Rotate Array](#15-rotate-array)
+    - [16. Palindrome Challenge](#16-palindrome-challenge)
 
 ## 🧠 Goal
 
@@ -486,4 +487,22 @@ Create a function that rotates the given array with length *N* with *K* steps
 **Output:**
 ```JSON
 [5,6,7,1,2,3,4]
-``````
+```
+### 16. Palindrome Challenge
+Problem:
+Create a function that checks if the input string is a Palindrome.
+
+**Input:**
+```JavaScript
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("hello"));                         // false
+console.log(isPalindrome("racecar"));                      // true
+console.log(isPalindrome("🚀 racecar 🚀"));                // true (Unicode safe!)
+```
+**Output:**
+```JavaScript
+// true
+// false
+// true
+// true Unicode test
+```

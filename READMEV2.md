@@ -15,6 +15,7 @@
     - [10. Repeated Character Challenge](#10-repeated-character-challenge)
     - [11. String Challenge](#11-string-challenge)
     - [12. Math Challenge](#12-math-challenge)
+    - [13. Array Parser](#13-array-parser)
 
 ## 🧠 Goal
 
@@ -453,3 +454,15 @@ Implement a function MathChallenge(num) that determines if a given number is pri
 - Efficiency: Using Math.sqrt(num) significantly reduces the number of iterations, which is vital as the input reaches (65,536).
 - Remember 1: The number 1 is neither prime nor composite. Ensure your function handles this correctly by returning "false"
 - Even Numbers: Aside from the number 2, no even number can be prime. You can optimize your loop further by checking if the number is 2 and then skipping all other even numbers.
+
+### 13. Array Parser
+Problem:
+Implement a function that flattens arrays of arrays in a single array. 
+
+**Input:**
+- An array
+```JSON
+[1,[2,3,4],[5,6,[7,8]],9,10]
+```
+**Expected Output:**
+- Return all elements in a single array

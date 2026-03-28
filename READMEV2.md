@@ -16,6 +16,7 @@
     - [11. String Challenge](#11-string-challenge)
     - [12. Math Challenge](#12-math-challenge)
     - [13. Array Parser](#13-array-parser)
+    - [14. Event Loop](#14-event-loop)
 
 ## 🧠 Goal
 
@@ -59,7 +60,7 @@ Given a JSON array of users with an email field, group all users by their `email
 
 ### 2. Flatten a Nested Tag Structure
 Problem:
-Given a JSON object where each key represents a post and its associated `tags` array (possibly nested), flatten all tags into a unique list.
+Given a JSON object where each key represents a post and its associated `tags` array (possibly nested), flatten all tags into a unique list. Write two different functions with Object and a for loop to solve the problem.
 
 **Input JSON Format:**
 ```JSON
@@ -78,7 +79,7 @@ Given a JSON object where each key represents a post and its associated `tags` a
 
 ### 3. Find Top N Products by Quantity
 Problem:
-Given a list of products with `name` and `quantity_sold`, find the top `N` products by quantity.
+Given a list of products with `name` and `quantity_sold`, find the top `N` products by quantity. Write two different functions with toSorted and for...loop to solve the problem.
 
 **Input JSON Format:**
 ```JSON
@@ -101,7 +102,7 @@ Given a list of products with `name` and `quantity_sold`, find the top `N` produ
 
 ### 4. Detect Duplicate Customers by Name and Email
 Problem:
-Given a list of customers, find all duplicates based on **both** name and email (case insensitive).
+Given a list of customers, find all duplicates based on **both** name and email (case insensitive). Write two different functions with Object and for...loop to solve the problem.
 
 **Input JSON Format:**
 ```JSON
@@ -124,7 +125,7 @@ Given a list of customers, find all duplicates based on **both** name and email 
 
 ### 5. Build User-Post Relationships
 Problem:
-Given two separate JSON arrays — one for `users`, and one for `posts`, where each post has a `user_id`, return each user with their posts attached.
+Given two separate JSON arrays — one for `users`, and one for `posts`, where each post has a `user_id`, return each user with their posts attached. Write two different functions with Object and for...loop to solve the problem.
 
 **Input JSON Format:**
 ```JSON
@@ -153,7 +154,7 @@ Given two separate JSON arrays — one for `users`, and one for `posts`, where e
 
 ### 6. Filter Users with High Ratings
 Problem:
-Given an array of user records from a JSON file, extract only the users whose `result.rating` **is greater than 4**. This helps in identifying high performers based on a simple numerical threshold.
+Given an array of user records from a JSON file, extract only the users whose `result.rating` **is greater than 4**. This helps in identifying high performers based on a simple numerical threshold. Write two different functions with Chain and for...loop to solve the problem.
 
 **Input JSON Format:**
 ```JSON
@@ -468,3 +469,8 @@ Implement a function that flattens arrays of arrays in a single array.
 ```
 **Expected Output:**
 - Return all elements in a single array
+
+### 14. Event Loop
+Problem:
+Create a function that best represents the event loop.
+

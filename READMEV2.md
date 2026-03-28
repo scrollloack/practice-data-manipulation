@@ -17,6 +17,7 @@
     - [12. Math Challenge](#12-math-challenge)
     - [13. Array Parser](#13-array-parser)
     - [14. Event Loop](#14-event-loop)
+    - [15. Rotate Array](#15-rotate-array)
 
 ## 🧠 Goal
 
@@ -474,3 +475,15 @@ Implement a function that flattens arrays of arrays in a single array.
 Problem:
 Create a function that best represents the event loop.
 
+### 15. Rotate Array
+Problem:
+Create a function that rotates the given array with length *N* with *K* steps
+
+**Input:**
+```JSON
+[1,2,3,4,5,6,7]
+```
+**Output:**
+```JSON
+[5,6,7,1,2,3,4]
+``````

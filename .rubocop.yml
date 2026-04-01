@@ -5,7 +5,8 @@ inherit_mode:
 AllCops:
   SuggestExtensions: false
   Exclude:
-    - "data/**/*"
+    - 'data/**/*'
+  TargetRubyVersion: 3.4
 
 # All cops except your using extensions are disabled by default.
 Bundler:
@@ -192,12 +193,12 @@ Style/ParenthesesAroundCondition:
 Style/PercentLiteralDelimiters:
   Enabled: true
   PreferredDelimiters:
-    default: "()"
-    "%i": "[]"
-    "%I": "[]"
-    "%r": "{}"
-    "%w": "[]"
-    "%W": "[]"
+    default: '()'
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
 
 # Use quotes for string literals when they are enough.
 Style/RedundantPercentQ:
@@ -219,7 +220,7 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: single_quotes
   Include:
-    - "src/**/*"
+    - 'src/**/*'
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: true

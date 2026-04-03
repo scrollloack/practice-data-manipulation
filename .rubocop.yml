@@ -27,6 +27,12 @@ Security:
 Style:
   Enabled: false
 
+Layout/SpaceAroundOperators:
+  Enabled: true
+  # Allows no spaces for ** (exponent) operator, e.g. x**2 is allowed
+  AllowForAlignment: false
+  EnforcedStyleForExponentOperator: no_space # or 'space'
+
 # Align `when` with `end`.
 Layout/CaseIndentation:
   Enabled: true

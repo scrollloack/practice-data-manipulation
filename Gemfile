@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rubocop", "1.39.0"
+gem 'rubocop', '>= 1.65.0'  # 1.65+ added Ruby 3.4 support
 gem "rubocop-performance", "1.15.1"
 gem "rubocop-rails", "2.17.2"
 gem 'rspec', '~> 3.4'

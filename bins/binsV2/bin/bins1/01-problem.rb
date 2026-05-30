@@ -9,7 +9,7 @@ users = [
 ]
 
 users_by_domain = users.each_with_object({}) do |user, hash|
-  domain = user[:email].split('@')[1]
+  domain = user[:email].split('@').last
   (hash[domain] ||= []) << user[:name]
 end
 

@@ -16,9 +16,9 @@ end
 def find_all_repeat_chars(str)
   counts = Hash.new(0)
 
-  str.each_char { |c| counts[c] += 1 }
+  str.each_char { |char| counts[char] += 1 }
 
-  counts.select { |_, count| count > 1  }.keys
+  counts.select { |_, count| count > 1 }.keys
 end
 
 puts JSON.pretty_generate({ data: find_first_repeat_char('swiss') })

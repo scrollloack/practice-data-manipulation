@@ -11,9 +11,7 @@ products = [
 ]
 
 def find_top_sold_with_sort(products, n)
-  products.sort_by do |product|
-    -product[:quantity_sold]
-  end.first(n)
+  products.sort_by { |product| -product[:quantity_sold] }.first(n)
 end
 
 def find_top_sold_with_loop(products, n)

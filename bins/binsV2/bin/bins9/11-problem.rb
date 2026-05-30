@@ -2,7 +2,6 @@
 
 def is_constructed(str1, str2)
   counts = Hash.new(0)
-
   str1.each_char { |c| counts[c] += 1 }
 
   str2.each_char do |c|

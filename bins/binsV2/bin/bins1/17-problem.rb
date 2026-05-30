@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-def find_second_largest(args)
-  return { secondLargest: nil } if args.length < 2
+def find_second_largest(numbers)
+  return { secondLargest: nil } if numbers.length < 2
 
   largest = -Float::INFINITY
   second_largest = -Float::INFINITY
 
-  args.each do |num|
+  numbers.each do |num|
     if num > largest
       largest, second_largest = num, largest
-    elsif num > second_largest && num < largest
+    elsif num > second_largest && num != largest
       second_largest = num
     end
   end

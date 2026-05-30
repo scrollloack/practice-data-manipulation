@@ -2,28 +2,28 @@
 
 require 'json'
 
-def rotate(arr, k)
-  n = arr.length
-  return arr if n <= 1
+def rotate(args, k)
+  n = args.length
+  return args if n <= 1
 
   k = k % n
-  return arr if k == 0
+  return args if k === 0
 
-  def reverse(a, start, stop)
+  def reverse(arr, start, stop)
     while start < stop
-      a[start], a[stop] = a[stop], a[start]
+      arr[start], arr[stop] = arr[stop], arr[start]
       start += 1
-      stop  -= 1
+      stop -= 1
     end
   end
 
-  reverse(arr, 0, n - 1)
-  reverse(arr, 0, k - 1)
-  reverse(arr, k, n - 1)
+  reverse(args, 0, n - 1)
+  reverse(args, 0, k - 1)
+  reverse(args, k, n - 1)
 
-  arr
+  args
 end
 
-array = [1, 2, 3, 4, 5, 6, 7]
+array = [ 1, 2, 3, 4, 5, 6, 7 ]
 puts JSON.pretty_generate({ data: rotate(array, 3) })
 # Output: [5, 6, 7, 1, 2, 3, 4]

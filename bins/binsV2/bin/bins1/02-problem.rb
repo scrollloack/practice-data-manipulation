@@ -20,14 +20,13 @@ def flatten_with_loop(posts)
     arr.each do |tag|
       if tag.is_a? Array
         flatten.call(tag)
-      elsif !unique_tags.include?(tag)
+      elsif !unique_tags.include? tag
         unique_tags << tag
       end
     end
   }
 
-  posts.each_value { |p| flatten.call(p[:tags]) }
-
+  posts.each_value { |post| flatten.call(post[:tags]) }
   unique_tags
 end
 

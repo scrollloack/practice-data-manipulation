@@ -2,14 +2,14 @@
 
 def is_prime_number(num)
   return false unless num.is_a?(Integer) && num >= 2
-  return true if num === 2
-  return false if num % 2 === 0
+  return true  if num == 2
+  return false if num.even?
 
-  limit = Math.sqrt(num)
+  limit = Math.sqrt(num).to_i
   i = 3
 
   while i <= limit
-    return false if num % i === 0
+    return false if num % i == 0
     i += 2
   end
 

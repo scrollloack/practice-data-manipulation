@@ -14,7 +14,7 @@ end
 
 def str_rev_with_loop_efficient(str)
   chars = Array.new(str.length)
-  j = chars.length - 1
+  j = str.length - 1
 
   str.length.times do |i|
     chars[i] = str[j]
@@ -28,7 +28,11 @@ def str_rev_with_chain(str)
   str.chars.reverse.join
 end
 
+def str_rev_with_spread(str)
+  str.chars.reverse.join
+end
+
 puts JSON.pretty_generate({ data: str_rev_with_loop('hello') })
 puts JSON.pretty_generate({ data: str_rev_with_loop_efficient('hello') })
 puts JSON.pretty_generate({ data: str_rev_with_chain('world') })
-puts JSON.pretty_generate({ data: str_rev_with_chain('programmer') })
+puts JSON.pretty_generate({ data: str_rev_with_spread('programmer') })

@@ -18,16 +18,10 @@ users = data[:users]
 posts = data[:posts]
 
 def get_users_posts_with_group(users, posts)
-  grouped_posts = posts.group_by { |p| p[:user_id] }
+  grouped_posts = posts.group_by { |post| post[:user_id] }
 
   users.map do |user|
-    user_posts = (grouped_posts[user[:id]] || []).map do |p|
-      {
-        id: p[:id],
-        title: p[:title]
-      }
-    end
-
+    user_posts = (grouped_posts[user[:id]] || []).map { |p| { id: p[:id], title: p[:title] } }
     user.merge(posts: user_posts)
   end
 end
@@ -35,10 +29,10 @@ end
 def get_users_posts_with_loop(users, posts)
   posts_by_user_id = {}
 
-  posts.each do |p|
-    user_id = p[:user_id]
+  posts.each do |post|
+    user_id = post[:user_id]
     posts_by_user_id[user_id] ||= []
-    posts_by_user_id[user_id] << { id: p[:id], title: p[:title] }
+    posts_by_user_id[user_id] << { id: post[:id], title: post[:title] }
   end
 
   users.map do |user|

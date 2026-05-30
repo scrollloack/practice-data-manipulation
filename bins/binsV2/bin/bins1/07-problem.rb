@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 require 'json'
@@ -12,9 +11,7 @@ staffs = JSON.parse(
 def find_latest_feedbacks_with_chain(staffs)
   staffs.map do |staff|
     result = staff[:result]
-    latest = result[:feedback].max_by do |feedback|
-      Date.parse(feedback[:date])
-    end
+    latest = result[:feedback].max_by { |f| Date.parse(f[:date]) }
 
     staff.slice(:email, :full_name).merge(
       latest_comment: latest&.dig(:comment) || 'No available feedback yet.'

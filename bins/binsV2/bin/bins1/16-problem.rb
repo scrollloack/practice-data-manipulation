@@ -3,12 +3,12 @@
 def is_palindrome(str)
   chars = str.downcase.gsub(/[^a-z0-9]/u, '').chars
 
-  left = 0
+  left  = 0
   right = chars.length - 1
 
   while left < right
     return false if chars[left] != chars[right]
-    left += 1
+    left  += 1
     right -= 1
   end
 
